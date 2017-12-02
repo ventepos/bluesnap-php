@@ -67,16 +67,8 @@ class Api
 
         if ($response->getStatusCode() === 200 || $response->getStatusCode() === 201)
         {
-            if ($response->hasHeader('Location')) {
-                $location = $response->getHeader('Location');
-                $location_array = explode('/', $location[0]);
-                $model_id = end($location_array);
-
-                return [ 'id' => (int) $model_id ];
-            } else {
-                $model = $response->getBody()->getContents();
-                return json_decode($model, true);
-            }
+            $model = $response->getBody()->getContents();
+            return json_decode($model, true);
         }
 
         return $response;

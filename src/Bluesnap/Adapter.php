@@ -64,8 +64,7 @@ class Adapter
 
             if ($id_in_header)
             {
-                $data = $response + $data;  //  combine arrays
-                $model = Utility::setupModel($model, $data);
+                $model = Utility::setupModel($model, $response);
             }
             else
             {
