@@ -8,6 +8,10 @@
         {
             "name": "Daniel Cox",
             "email": "tdanielcox@gmail.com"
+        },
+        {
+            "name": "Patrick McCarren",
+            "email": "patrick@mmsc.io"
         }
     ],
     "require": {
@@ -16,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "tdanielcox\\": "src/"
+            "BlueSnap\\": "src/Bluesnap"
         }
     }
 }
