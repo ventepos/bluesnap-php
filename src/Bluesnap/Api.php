@@ -50,24 +50,24 @@ class Api
         return null;
     }
 
-    public static function post($endpoint, $data)
+    public static function post($endpoint, $data, $id_in_header)
     {
         $client = self::getClient();
 
-//        $clientHandler = $client->getConfig('handler');
-//        $tapMiddleware = Middleware::tap(function ($request) {
-//            echo "Request data:\n\ncontent-type: ". $request->getHeaderLine('Content-Type') ."\n";
-//            echo "body: ". $request->getBody() ."\n\nResponse data:\n\n";
-//        });
+    //    $clientHandler = $client->getConfig('handler');
+    //    $tapMiddleware = Middleware::tap(function ($request) {
+    //        echo "Request data:\n\ncontent-type: ". $request->getHeaderLine('Content-Type') ."\n";
+    //        echo "body: ". $request->getBody() ."\n\nResponse data:\n\n";
+    //    });
 
         $response = $client->post($endpoint, [
             'json' => $data,
-//            'handler' => $tapMiddleware($clientHandler)
+        //    'handler' => $tapMiddleware($clientHandler)
         ]);
 
         if ($response->getStatusCode() === 200 || $response->getStatusCode() === 201)
         {
-            if ($response->hasHeader('Location')) {
+            if ($id_in_header && $response->hasHeader('Location')) {
                 $location = $response->getHeader('Location');
                 $location_array = explode('/', $location[0]);
                 $model_id = end($location_array);

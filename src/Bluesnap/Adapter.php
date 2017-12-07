@@ -60,7 +60,7 @@ class Adapter
             $data = Utility::objectToArray($data);
             $endpoint = Utility::getModelEndpoint($model);
 
-            $response = Api::post($endpoint, $data);
+            $response = Api::post($endpoint, $data, $id_in_header);
 
             if ($id_in_header)
             {
