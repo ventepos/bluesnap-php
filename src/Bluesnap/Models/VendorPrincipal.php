@@ -1,6 +1,6 @@
 <?php
 
-namespace tdanielcox\Bluesnap\Models;
+namespace Bluesnap\Models;
 
 /**
  * Class VendorPrincipal

@@ -1,8 +1,8 @@
 <?php
 
-namespace tdanielcox\Bluesnap;
+namespace Bluesnap;
 
-use tdanielcox\Bluesnap\Exceptions\BluesnapException;
+use Bluesnap\Exceptions\BluesnapException;
 use GuzzleHttp\Exception\ClientException;
 
 /**
