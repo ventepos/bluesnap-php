@@ -14,7 +14,9 @@ class VaultedShopper
 
     public static function create($data)
     {
-        return Adapter::create('VaultedShopper', $data);
+        return Adapter::create('VaultedShopper', $data, [
+            'id_in_header' => false
+        ]);
     }
 
     public static function update($id, $data)
