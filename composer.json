@@ -1,6 +1,7 @@
 {
     "name": "ventepos/bluesnap-php",
     "description": "A PHP Library for the Bluesnap api",
+    "keywords": ["bluesnap", "laravel"],
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/ventepos/bluesnap-php",
