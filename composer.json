@@ -1,10 +1,14 @@
 {
-    "name": "tdanielcox/bluesnap-php",
+    "name": "ventepos/bluesnap-php",
     "description": "A PHP Library for the Bluesnap api",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/tdanielcox/bluesnap-php",
+    "homepage": "https://github.com/ventepos/bluesnap-php",
     "authors": [
+        {
+            "name": "Patrick McCarren",
+            "email": "patrick@mmsc.io"
+        },
         {
             "name": "Daniel Cox",
             "email": "tdanielcox@gmail.com"
@@ -16,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "tdanielcox\\": "src/"
+            "Bluesnap\\": "src/Bluesnap"
         }
     }
 }
