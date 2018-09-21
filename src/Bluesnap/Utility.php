@@ -16,10 +16,15 @@ class Utility
 
         if ($errors)
         {
-            if (is_array($errors->message))
+            if (! empty($errors->message) && is_array($errors->message))
             {
                 $error = end($errors->message);
                 $response = trim($error->description);
+            }
+            else if (is_object($errors))
+            {
+                $error = $errors->errorCode ?: 'unknown';
+                $response = trim($errors->errorDescription ?: 'unknown');
             }
         }
 
