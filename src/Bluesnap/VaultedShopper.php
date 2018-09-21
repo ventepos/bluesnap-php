@@ -23,9 +23,4 @@ class VaultedShopper
     {
         return Adapter::update('VaultedShopper', $id, $data);
     }
-
-    public static function delete($id)
-    {
-        return Adapter::delete('VaultedShopper', $id);
-    }
 }
