@@ -26,6 +26,10 @@ class Utility
                 $error = $errors->errorCode ?: 'unknown';
                 $response = trim($errors->errorDescription ?: 'unknown');
             }
+            else if (is_string($errors))
+            {
+                $response = trim($errors);
+            }
         }
 
         return $response;
