@@ -49,6 +49,7 @@ class Utility
     {
         $models = [
             'CardTransaction' => 'transactions',
+            'EcpTransaction' => 'alt-transactions',
             'Report' => 'report',
             'Refund' => 'transactions/'. $model_id .'/refund',
             'Plan' => 'recurring/plans',
