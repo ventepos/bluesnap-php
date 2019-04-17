@@ -70,8 +70,13 @@ class Api
             if ($id_in_header && $response->hasHeader('Location')) {
                 $location = $response->getHeader('Location');
                 $location_array = explode('/', $location[0]);
-                $model_id = end($location_array);
 
+                // If we're fetching a Hosted Payment Fields token, return that.
+                if ($endpoint == 'payment-fields-tokens') {
+                  return ['hosted_payment_fields_token' => $location_array[6]];
+                }
+
+                $model_id = end($location_array);
                 return [ 'id' => (int) $model_id ];
             } else {
                 $model = $response->getBody()->getContents();
