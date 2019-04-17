@@ -1,11 +1,15 @@
 {
-    "name": "ventepos/bluesnap-php",
-    "description": "A PHP Library for the Bluesnap api",
+    "name": "shabananavas/php-bluesnap-sdk",
+    "description": "A PHP SDK for the BlueSnap API",
     "keywords": ["bluesnap", "laravel"],
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/ventepos/bluesnap-php",
+    "homepage": "https://github.com/shabananavas/php-bluesnap-sdk",
     "authors": [
+        {
+            "name": "Shabana Navas",
+            "email": "snavas@acromedia.com"
+        },
         {
             "name": "Patrick McCarren",
             "email": "patrick@mmsc.io"
