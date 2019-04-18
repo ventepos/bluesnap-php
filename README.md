@@ -37,6 +37,15 @@ public function __construct()
 }
 ```
 
+Create a New Hosted Payment Fields Token
+
+```php
+public function getHostedPaymentFieldsToken() {
+  $data = \Bluesnap\HostedPaymentFieldsToken::create();
+  return $data['hosted_payment_fields_token'];
+}
+```
+
 Create a New Transaction
 
 ```php
