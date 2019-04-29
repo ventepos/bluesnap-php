@@ -59,7 +59,6 @@ class Adapter
         {
             $data = Utility::objectToArray($data);
             $endpoint = Utility::getModelEndpoint($model);
-
             $response = Api::post($endpoint, $data, $id_in_header);
 
             if ($id_in_header)
@@ -98,7 +97,6 @@ class Adapter
             $data = Utility::objectToArray($data);
             $endpoint = Utility::getModelEndpoint($model, $id);
             $endpoint = $id_in_url ? $endpoint .'/'. $id : $endpoint;
-
             $response = Api::put($endpoint, $data);
             $model = Utility::setupModel($model, $response);
 

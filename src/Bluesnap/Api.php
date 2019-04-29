@@ -22,8 +22,9 @@ class Api
             'base_uri' => $base_url,
 //            'timeout'  => 10.0,
             'auth' => $credentials,
+            'bluesnap-version' => '3.0',
             'headers' => [
-                'Accept' => 'application/json'
+                'Accept' => 'application/json',
             ]
         ]);
     }
@@ -53,7 +54,6 @@ class Api
     public static function post($endpoint, $data, $id_in_header)
     {
         $client = self::getClient();
-
     //    $clientHandler = $client->getConfig('handler');
     //    $tapMiddleware = Middleware::tap(function ($request) {
     //        echo "Request data:\n\ncontent-type: ". $request->getHeaderLine('Content-Type') ."\n";
