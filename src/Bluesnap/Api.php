@@ -87,7 +87,7 @@ class Api
         return $response;
     }
 
-    public static function put($endpoint, $data)
+    public static function put($endpoint, $data = null, $query_params = null)
     {
         $client = self::getClient();
 
@@ -97,10 +97,15 @@ class Api
 //            echo "body: ". $request->getBody() ."\n\nResponse data:\n\n";
 //        });
 
-        $response = $client->put($endpoint, [
+        $options = [
             'json' => $data,
 //            'handler' => $tapMiddleware($clientHandler)
-        ]);
+        ];
+        if ($query_params && is_array($query_params)) {
+            $options['query'] = $query_params;
+        }
+
+        $response = $client->put($endpoint, $options);
 
         if ($response->getStatusCode() === 200 || $response->getStatusCode() === 204)
         {

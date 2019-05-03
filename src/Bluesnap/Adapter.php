@@ -91,6 +91,7 @@ class Adapter
 
     public static function update($model, $id, $data, $options = [])
     {
+        $query_params = Utility::getOption($options, 'query_params', null);
         $id_in_url = Utility::getOption($options, 'id_in_url', true);
 
         try
@@ -99,7 +100,7 @@ class Adapter
             $endpoint = Utility::getModelEndpoint($model, $id);
             $endpoint = $id_in_url ? $endpoint .'/'. $id : $endpoint;
 
-            $response = Api::put($endpoint, $data);
+            $response = Api::put($endpoint, $data, $query_params);
             $model = Utility::setupModel($model, $response);
 
             return new Response('success', $model);
