@@ -56,6 +56,7 @@ class Utility
             'SubscriptionCharge' => 'recurring/subscriptions/charges',
             'VaultedShopper' => 'vaulted-shoppers',
             'Vendor' => 'vendors',
+            'AltTransaction' => 'alt-transactions',
         ];
 
         return $models[$model];
@@ -76,7 +77,6 @@ class Utility
 
             return $models;
         }
-
         return new $class_path($data);
     }
 }

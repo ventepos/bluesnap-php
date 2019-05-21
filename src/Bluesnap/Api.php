@@ -22,8 +22,9 @@ class Api
             'base_uri' => $base_url,
 //            'timeout'  => 10.0,
             'auth' => $credentials,
+            'bluesnap-version' => '3.0',
             'headers' => [
-                'Accept' => 'application/json'
+                'Accept' => 'application/json',
             ]
         ]);
     }
