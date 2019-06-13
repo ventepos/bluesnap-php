@@ -58,7 +58,11 @@ class Adapter
         try
         {
             $data = Utility::objectToArray($data);
-            $endpoint = Utility::getModelEndpoint($model);
+
+            if (empty($data['subscription_id'])) {
+              $data['subscription_id'] = NULL;
+            }
+            $endpoint = Utility::getModelEndpoint($model, NULL, $data['subscription_id']);
 
             $response = Api::post($endpoint, $data, $id_in_header);
 

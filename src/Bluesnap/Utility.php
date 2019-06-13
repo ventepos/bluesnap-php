@@ -45,7 +45,7 @@ class Utility
         return $default;
     }
 
-    public static function getModelEndpoint($model, $model_id = null)
+    public static function getModelEndpoint($model, $model_id = null, $subscription_id = null)
     {
         $models = [
             'CardTransaction' => 'transactions',
@@ -54,6 +54,8 @@ class Utility
             'Plan' => 'recurring/plans',
             'Subscription' => 'recurring/subscriptions',
             'SubscriptionCharge' => 'recurring/subscriptions/charges',
+            'MerchantManagedSubscription' => 'recurring/ondemand',
+            'MerchantManagedSubscriptionCharge' => 'recurring/ondemand/'. $subscription_id,
             'VaultedShopper' => 'vaulted-shoppers',
             'Vendor' => 'vendors',
             'AltTransaction' => 'alt-transactions',
